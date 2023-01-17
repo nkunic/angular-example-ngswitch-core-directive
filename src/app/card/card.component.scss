@@ -31,6 +31,31 @@
       width: 100%;
       background-repeat: no-repeat;
     }
+    .card__category {
+      display: inline-flex;
+      padding: 0.3125rem 0.625rem;
+      border-radius: 1rem;
+      border: 1px solid black;
+      &:not(.card__category--beginner) {
+        &:not(.card__category--intermediate) {
+          &:not(.card__category--advanced) {
+            color: black;
+          }
+        }
+      }
+      &.card__category--beginner {
+        color: white;
+        background-color: green;
+      }
+      &.card__category--intermediate {
+        color: white;
+        background-color: salmon;
+      }
+      &.card__category--advanced {
+        color: white;
+        background-color: blue;
+      }
+    }
   }
 
   .card__footer {

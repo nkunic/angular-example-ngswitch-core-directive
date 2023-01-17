@@ -26,6 +26,17 @@
     <p class="card__description">
       {{ course.longDescription }}
     </p>
+    <div class="card__category" [ngSwitch]="course.category"
+    [ngClass]="[
+      course.category == 'BEGINNER' ? 'card__category--beginner' : '',
+      course.category == 'INTERMEDIATE' ? 'card__category--intermediate' : '',
+      course.category == 'ADVANCED' ? 'card__category--advanced' : ''
+    ]">
+      <span *ngSwitchCase="'BEGINNER'">Beginner</span>
+      <span *ngSwitchCase="'INTERMEDIATE'">Intermediate</span>
+      <span *ngSwitchCase="'ADVANCED'">Advanced</span>
+      <span *ngSwitchDefault>All levels</span>
+    </div>
   </div>
   <div class="card__footer">
     <button
