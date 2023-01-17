@@ -23,12 +23,6 @@ export class CardComponent {
     return this.course && this.course.iconUrl;
   }
 
-  //cardClasses() {
-  //  return {
-  //    'text-decoration': 'underline',
-  //    color: 'red',
-  //  };
-  //}
   imageClasses() {
     return {
       'background-image': 'url(' + this.course.iconUrl + ')',
