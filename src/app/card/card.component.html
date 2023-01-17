@@ -1,0 +1,50 @@
+<div
+  *ngIf="course"
+  class="card"
+  [ngClass]="[
+    course.category == 'BEGINNER' ? 'beginner' : '',
+    course.category == 'INTERMEDIATE' ? 'intermediate' : '',
+    course.category == 'ADVANCED' ? 'advanced' : ''
+  ]"
+>
+  <!--Style DOM property: <div class="card__header" [style.text-decoration]="'underline'">-->
+  <!--Object: <div class="card__header" 
+       [ngStyle]="{'text-decoration': 'underline', 'color': 'red'}">-->
+  <!--<div
+    class="card__header"
+    [ngStyle]="cardClasses()"
+  >-->
+  <div class="card__header">
+    <h3 class="card__title">
+      {{ cardIndex + ') ' + course.description }}
+    </h3>
+  </div>
+  <div class="card__content">
+    <div class="card__image">
+      <ng-template #noImage>
+        <p>No image is available</p>
+      </ng-template>
+      <!--<img
+        *ngIf="isImageVisible(); else noImage"
+        [src]="course.iconUrl"
+        [alt]="course.description"
+      />-->
+      <div
+        *ngIf="isImageVisible(); else noImage"
+        class="card__background-image"
+        [ngStyle]="imageClasses()"
+      ></div>
+    </div>
+    <p class="card__description">
+      {{ course.longDescription }}
+    </p>
+  </div>
+  <div class="card__footer">
+    <button
+      class="card__button card__button--standard"
+      (click)="onCustomButtonClicked()"
+    >
+      Custom browser event
+    </button>
+  </div>
+</div>
