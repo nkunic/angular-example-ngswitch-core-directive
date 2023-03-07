@@ -2,36 +2,39 @@
   *ngIf="course"
   class="card"
   [ngClass]="[
-    course.category == 'BEGINNER' ? 'beginner' : '',
-    course.category == 'INTERMEDIATE' ? 'intermediate' : '',
-    course.category == 'ADVANCED' ? 'advanced' : ''
+    course.category == 'BEGINNER' ? 'card--beginner' : '',
+    course.category == 'INTERMEDIATE' ? 'icard--ntermediate' : '',
+    course.category == 'ADVANCED' ? 'card--advanced' : ''
   ]"
 >
   <div class="card__header">
     <h3 class="card__title">
-      {{ cardIndex + ') ' + course.description }}
+      {{ cardIndex + ') ' + course.title }}
     </h3>
   </div>
   <div class="card__content">
     <div class="card__image">
-      <ng-template #noImage>
-        <p>No image is available</p>
-      </ng-template>
       <div
         *ngIf="isImageVisible(); else noImage"
         class="card__background-image"
         [ngStyle]="imageClasses()"
       ></div>
+      <ng-template #noImage>
+        <p>No image is available</p>
+      </ng-template>
     </div>
     <p class="card__description">
-      {{ course.longDescription }}
+      {{ course.description }}
     </p>
-    <div class="card__category" [ngSwitch]="course.category"
-    [ngClass]="[
-      course.category == 'BEGINNER' ? 'card__category--beginner' : '',
-      course.category == 'INTERMEDIATE' ? 'card__category--intermediate' : '',
-      course.category == 'ADVANCED' ? 'card__category--advanced' : ''
-    ]">
+    <div
+      class="card__category"
+      [ngSwitch]="course.category"
+      [ngClass]="[
+        course.category == 'BEGINNER' ? 'card__category--beginner' : '',
+        course.category == 'INTERMEDIATE' ? 'card__category--intermediate' : '',
+        course.category == 'ADVANCED' ? 'card__category--advanced' : ''
+      ]"
+    >
       <span *ngSwitchCase="'BEGINNER'">Beginner</span>
       <span *ngSwitchCase="'INTERMEDIATE'">Intermediate</span>
       <span *ngSwitchCase="'ADVANCED'">Advanced</span>
