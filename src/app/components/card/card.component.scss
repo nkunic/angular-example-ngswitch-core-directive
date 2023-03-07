@@ -12,6 +12,9 @@
   &.card--advanced {
     background-color: lightblue;
   }
+  &.card--all-levels {
+    background-color: lightgoldenrodyellow;
+  }
 
   .card__header {
     .card__title {
@@ -36,13 +39,6 @@
       padding: 0.3125rem 0.625rem;
       border-radius: 1rem;
       border: 1px solid black;
-      &:not(.card__category--beginner) {
-        &:not(.card__category--intermediate) {
-          &:not(.card__category--advanced) {
-            color: black;
-          }
-        }
-      }
       &.card__category--beginner {
         color: white;
         background-color: green;
@@ -54,6 +50,10 @@
       &.card__category--advanced {
         color: white;
         background-color: blue;
+      }
+      &.card__category--all-levels {
+        color: black;
+        background-color: yellow;
       }
     }
   }

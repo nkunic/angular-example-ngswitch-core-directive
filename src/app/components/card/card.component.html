@@ -3,8 +3,13 @@
   class="card"
   [ngClass]="[
     course.category == 'BEGINNER' ? 'card--beginner' : '',
-    course.category == 'INTERMEDIATE' ? 'icard--ntermediate' : '',
-    course.category == 'ADVANCED' ? 'card--advanced' : ''
+    course.category == 'INTERMEDIATE' ? 'card--intermediate' : '',
+    course.category == 'ADVANCED' ? 'card--advanced' : '',
+    course.category != 'BEGINNER' &&
+    course.category != 'INTERMEDIATE' &&
+    course.category != 'ADVANCED'
+      ? 'card--all-levels'
+      : ''
   ]"
 >
   <div class="card__header">
@@ -32,7 +37,12 @@
       [ngClass]="[
         course.category == 'BEGINNER' ? 'card__category--beginner' : '',
         course.category == 'INTERMEDIATE' ? 'card__category--intermediate' : '',
-        course.category == 'ADVANCED' ? 'card__category--advanced' : ''
+        course.category == 'ADVANCED' ? 'card__category--advanced' : '',
+        course.category != 'BEGINNER' &&
+        course.category != 'INTERMEDIATE' &&
+        course.category != 'ADVANCED'
+          ? 'card__category--all-levels'
+          : ''
       ]"
     >
       <span *ngSwitchCase="'BEGINNER'">Beginner</span>

@@ -56,7 +56,7 @@ export const COURSES: any = [
       'Learn Angular Progressive Web Applications, build the future of the Web Today.',
     iconUrl:
       'https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-pwa-course.png',
-    category: 'ADVANCED',
+    category: 'INTERMEDIATE',
     lessonsCount: 8,
   },
   {
@@ -84,7 +84,7 @@ export const COURSES: any = [
       'Learn the core RxJs Observable Pattern as well and many other Design Patterns for building Reactive Angular Applications.',
     iconUrl:
       'https://s3-us-west-1.amazonaws.com/angular-academy/blog/images/rxjs-reactive-patterns-small.png',
-    category: 'BEGINNER',
+    category: 'INTERMEDIATE',
   },
   {
     id: 10,
